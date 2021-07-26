@@ -1,0 +1,24 @@
+{include file="overall_header.html"}
+<!--Navigation-->
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item active">{$SITENAME}</li>
+	</ol>
+</nav>
+<!--Formulaire permettant l'enregistrement d'un lot de médicament à une date donnée-->
+<form>
+	<div class="form-group">
+      <label for="SelectProd">Médicament</label>
+      <select id="SelectProd" class="form-control">
+        <option>Test</option>
+      </select>
+  </div>
+  <div class="form-group">
+    	<label for="DateProd">Date de fabrication</label>
+    	<input type="date" id="DateProd" />
+  </div>
+  <button type="submit" class="btn btn-danger">Enregistrer</button>	
+</form>
+<a class="btn btn-danger" href="#" role="button">Annuler</a>
+
+{include file="overall_footer.html"}

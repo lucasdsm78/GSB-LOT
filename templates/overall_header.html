@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" id="min-width" lang="fr" xml:lang="fr" xmlns:og="http://opengraphprotocol.org/schema/">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<title>{$TITLE_PAGE}{$TIRET}{$SITENAME}</title>
+        <meta name="robots" content="noindex, nofolow" />
+        <meta name="title" content="{$TITLE_PAGE}{$TIRET}{$SITENAME}">
+        <meta name="description" content="{$DESCRIPTION}">
+        <meta name="keywords" content="gsb, medicaux">
+        <meta name="copyright" content="BTS SIO - St-Adjutor de Vernon">
+        <meta name="author" content="Team6">
+
+        <!-- FAVICON -->
+        <link rel="icon" type="image/png" href="templates/design/images/favicon.png">
+        <link rel="shortcut icon" href="templates/design/images/favicon.png">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/fontawesome/css/all.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="templates/design/style.css" type="text/css" media="all">
+	</head>
+	<body>
+        <div class="box">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand text-uppercase" href="./">
+                    <img src="templates/design/images/logoGSB.png" width="50" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                    &nbsp;GSB Lot
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse text-uppercase" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto"></ul>
+
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item"><a class="nav-link" href="./"><i class="fas fa-home"></i> Accueil</a></li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user"></i> Mon compte
+                            </a>
+
+                            <div class="dropdown-menu text-capitalize" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="index.php?p=profil"><i class="fas fa-cogs"></i> Mon profil</a>
+                                <a class="dropdown-item" href="index.php?p=deconnexion"><i class="fas fa-power-off"></i> Déconnexion</a>
+                            </div>
+                        </li>
+
+                        {if $SESSION['droitUtilisateur'] == 1}
+                            <li class="nav-item"><a class="nav-link" href="index.php?p=production"><i class="fas fa-box"></i> Production</a></li>
+                        {/if}
+
+                        {if $SESSION['droitUtilisateur'] == 2}
+                            <li class="nav-item"><a class="nav-link" href="index.php?p=visiteur"><i class="fas fa-users"></i> Visiteur</a></li>
+                        {/if}
+
+                        {if $SESSION['droitUtilisateur'] == 3}
+                            <li class="nav-item"><a class="nav-link" href="index.php?p=magasin"><i class="fas fa-shopping-basket"></i> Magasin</a></li>
+                        {/if}
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">{$SITENAME}</h1>
+                    <p class="lead">{$BIOGRAPHIE}</p>
+                </div>
+            </div>
+
+            <div class="body">
+                <div class="alert alert-secondary" role="alert">
+                    Bienvenue en tant que <strong>{$SESSION['pseudoUtilisateur']}</strong>
+                </div>
